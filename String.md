@@ -1,0 +1,28 @@
+# String Data Structure  
+- String is a built in data structure in python which handles is text data. Python provdes multiples operators, built-in methods, functions, modules to handle string data in python. 
+
+## Creation of String data
+- We can create a string literal by just by using single quotes, double or tripple quotes
+```python
+a = 'premkumar' 
+b = "premkumar"
+c = ''' I have a bag.
+        which has a lot of books''' # triples quotes are for multi line text
+```
+## Operators with Strings
+### Concatenation (+)
+- We use + operator to join two or more strings
+```python 
+a = 'PremKumar'
+b = ' sanamala'
+c = a+b # 'PremKumar sanamala'
+```
+### Repetition (*)
+- To repeate chareters in a string or a string itself we use * operator
+```python
+a = 'prem'
+b = a*3 # 'prempremprem'
+```
+
+### 
+
