@@ -24,5 +24,25 @@ a = 'prem'
 b = a*3 # 'prempremprem'
 ```
 
-### 
+### Length of a string 
+- len() function retuns the number of charecters in a given string. 
+```python
+a = len('prem kumar')
+a # 10
+```
+
+### Accessing a string 
+- We can access charecter or charecters in a string by using [] operators
+```python
+a = 'premkumar'
+# passing index of the charecter in a string
+a[4]  # k
+# passing the strat index and stop index 
+a[4:8] #kumar
+# passing the start stop indices and step 
+a[4:8:-1] #ramuk 
+
+```
+
+
 
