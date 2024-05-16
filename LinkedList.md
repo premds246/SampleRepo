@@ -91,11 +91,97 @@ for word in word.iter():
 - Doing this for every node when data is huge to be stored is an tedeous task. So lets comeup with a method to append the new items in to the Linked list. 
 
 
+### Appending Items 
+- The first method we need to create is to append elements in to the list. 
+- This method enables the programmer not to interact with the node classes or objects directly. 
+- Here in this topic we discuss how to append the elements at the begining, middle and end of the list. 
 
-### Appending Items
 #### Appending items to the end of the list
-#### Appending at the begining of the list
-#### Appending at intermediate positions
+- To append an element at the end of the list we need to travese through the entire list and reach the last node and then link the new node to the last node of the list. 
+
+```python 
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None 
+
+    def insert(self,data):
+        newNode = Node(data)
+        if self.head is None:
+            self.head = newNode
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = node
+
+```
+- The methods checks the head pointer is none or not if it none the list is empty then we point head to the newNode. 
+- Here we have created a new method which takes a value, creates a node using the node class and loops through the nodes using while loop. 
+- The while loop runs till there is a next node for the current node, where for the last node ther wont be next node then the loop breaks and then we add the new node to last node using current.next = node notation.  
+- This implementation is not efficient where we need to traverse till the end of the list to add every element every time. 
+- Let's try another way, in this way we every time we add an element we try to store the last element using a different pointer. The moment we need to add and element rather to traverse till the last node we simply add this new node to the next of the last node and update the last node to the added node. 
+
+```python
+
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None 
+    
+    def insert(self,data):
+        
+        newNode = Node(data)
+        
+        if self.tail:
+            self.tail.next = newNode
+            self.tail = newNode
+        else:
+            self.head = newNode
+            self.tail = newNode 
+
+```
+- Here we have created a new pointer variable in the init method called tail. 
+- This tails keeps the reference of the last node. 
+- When the self.head and self.tail is none we add the newNode to the head and tail. 
+- Now eveytime we add a new element by just keeping the head pointer to the first node itself. we move the tail pointer pointing the last node. 
+- This done by assigning the newNode to the next of the tail node and 
+
+#### Appending at intermediate positions 
+- Just as we add new elements in a list by appending them at the end of the list, sometime we also requires to add the elements at the middle at a specific position of the list. 
+- As we added the last element without using to traverse the list we cannot do this here as we never know before where we need to add the element. 
+- So we must have to travese the list till the index position and then hold the two elements prev node and next node in variables and then insert and link the required node. 
+
+```python 
+
+class LinkedList:
+    
+    def __init__(self):
+        self.head = None
+        self.tail = None
+    
+    def insertAt(self,data,index):
+        newNode = Node(data)
+        current = self.head
+        prev    = self.head 
+        count = 1
+
+        while current:
+            if count == 1:
+                newNode.next = current
+                self.head = newNode 
+                return
+            elif count == index:
+                newNode.next = current
+                prev.next = newNode 
+                return
+            else:
+                prev = current
+                current = current.next
+                count+=1
+        if count < index:
+            print('No such index position exist')
+
+```
 
 ### Querying a List 
 #### Searching for an Item
