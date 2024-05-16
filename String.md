@@ -24,6 +24,27 @@ a = 'prem'
 b = a*3 # 'prempremprem'
 ```
 
+### Comparision (== or !=)
+- To compare two strings we have == and != operator
+```python
+'prem' == 'kumar' # False
+'Prem' != 'Kumar' # True
+
+### Membership Testing (in / not in)
+- We can test weather a string or charecter present in another string or not 
+```python
+a = 'premkumar is my name'
+'prem' in a # True 
+'kumar' not in a # False 
+
+```
+
+### Identity testing (is)
+- We can test two string same or not using is operator
+```python
+'kumar' is 'prem' # False
+```
+
 ### Length of a string 
 - len() function retuns the number of charecters in a given string. 
 ```python
