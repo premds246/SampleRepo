@@ -47,11 +47,50 @@ n2.next = n3
 - We can create a node by creating a Node instance by passing the data. 
 - We can create the linked list by creating an instance of Linked list. 
 - To link nodes with other all we need to do is assign the node to be linked to the next attribute of a node. 
-- Now to store the head pointer assign the firt node to the head attribute of the Linkedlist instance.
+- Now to store the head pointer assign the firt node to the head attribute of the Linkedlist instance. 
+
+#### Traversal of a list
+- We store data in a data structure with an aim be able to retrve the data when ever we want. 
+- For this we must be able to traverse each item of a data structure. Let's look how can we travese the linked list. 
+- To traverse a linked list we should run a while loop and using the pointer of a node we should move to every other node and access data. 
+
+```python
+current = n1
+
+while current:
+    print(current.data)
+    current = current.next
 
 
+```
 
-#### Improved Version 
+- We start with the first node for which we store it in a variable called current. 
+- Then we run a while loop this loop runs till it hits none data which means the end of the list. 
+- We can access the data stored in a node using node.data notation and then we shange the current node to the next node by current.next notation. 
+- There is a problem with this approach the programmer gets to know the inner workings of nodes and objects. 
+
+```python 
+# This method iterates through the list and yields values as a generator object
+def iter(self):
+    current = self.head
+    while current:
+        val = current.data
+        current = current.next 
+        yield val 
+
+```
+- Now we can simply loop through the elements like a python list using a for loop. 
+
+```python 
+for word in word.iter():
+    print(word)
+
+```
+- Now node internal objects are exposed to programmer. 
+- Every time we need to add a node we need to do two things creating a node object and linking it to the last node. 
+- Doing this for every node when data is huge to be stored is an tedeous task. So lets comeup with a method to append the new items in to the Linked list. 
+
+
 
 ### Appending Items
 #### Appending items to the end of the list
