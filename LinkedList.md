@@ -138,6 +138,7 @@ class SinglyLinkedList:
         else:
             self.head = newNode
             self.tail = newNode 
+    
 
 ```
 - Here we have created a new pointer variable in the init method called tail. 
@@ -180,18 +181,134 @@ class LinkedList:
                 count+=1
         if count < index:
             print('No such index position exist')
+        
+        def insertAtEqualValue(self,data):
+            newNode = Node(data)
+            current = self.head
+            prev = self.head
+            while current:
+                if current.data == data:
+                    newNode.next = current
+                    prev.next = newNode
+                    return
+                prev = current
+                current = current.next
+                
+
+```
+- Sometimes we also wants to insert elements at a node where the value is same or the value lies between the prev and current values. 
+- Then the logic of the above method changes. 
+
+### Querying a List 
+- Whenever we create a list, we sometimes may require to get informtaion about the list. like below. 
+
+#### Searching for an Item
+
+```python
+
+def search(self,item):
+    current = self.head
+    while current:
+        if current.data == item:
+            return True
+        current = current.next 
+    return False
+
+```
+#### Getting the size of the List 
+- To get the size of a linked list we cana traverse through and couunt the number of elements. 
+
+```python 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.size = 0
+
+    def insert(self,data):
+        newNode = Node(data)
+        if tail:
+            self.tail.next = newNode
+            self.tail = newNode
+
+        else:
+            self.head = newNode
+            self.tail = newNode 
+        self.size +=1
+
+    def size(self):
+        count = 0
+        current = self.head
+        while current:
+            count +=1
+            current = current.next
+        return count 
 
 ```
 
-### Querying a List 
-#### Searching for an Item
-#### Getting the size of the List
-
 ### Deleting Items
 #### Deleting node at the begining 
+- To delete the first node all we need to do is to move the head pointer to the next of the head 
+
+```python 
+
+def delete_first_node(self):
+    
+    if self.head is None:
+        print('There are no elements to delete')
+    else:
+        current = self.head
+        self.head == current.next 
+
+```
 #### Deleting node at the end 
+- To delete the last node of the list we need to 
+
+```python 
+
+def delete_node_at_end(self):
+    
+    current = self.head 
+    prev    = self.head 
+    
+    while current.next: 
+        prev = current
+        current = current.next
+        
+    prev.next = None
+    self.size -= 1
+
+```
 #### Deleting node at intermediate 
+
+```python
+
+def delete_node_at_index(self,data,index):
+    current = self.head
+    prev    = self.head 
+    count = 1
+
+    while current:
+        if count == index:
+            prev.next = current.next
+        prev = current
+        curent = curren.next
+        count +=1
+
+
+
+```
+
 #### Clearing a list
+- To clear the list all we need to do is to set the pointers to none. 
+
+```python
+
+def clear(self):
+    self.head = None
+    self.tail = None
+
+```
 
 
 ## Doubly Linked List 
