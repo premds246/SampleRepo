@@ -362,13 +362,129 @@ Singly linked lists are useful in scenarios where dynamic data management is req
 - A Doubly linked list is a linked list with two links between each of two nodes. 
 - One link is pointer that stores reference to the next node. 
 - Second link is a pointer that stores reference to the previous node. 
-- A doubly linked list is an improved version of 
-
+- A doubly linked list is an improved version of linked list where in singly linked list if we want to access an element at the end or near end elements which takes to travese all the elements. 
+- But in a dounly linked list we can travese the list from both directions head to tail and tail to head which reduces the time complexity. 
 
 ### Creating and Traversing
+- Creating a doubly linked list is similar to singly linked except doubly linked list has a previous reference pointer extra.
+```python
+
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+class doublyLinkedList:
+    
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.size = None
+
+
+```
+- Here we have created two classes the Node class and a doubly linked list class. 
+- The node acts as a basic building block to the doubly linked list and the doubly linked list stores the head node reference, tail node reference and size of the list. 
+
+
 ### Appending Items 
+- We can append a node in three different ways
+    - At the begining of the list 
+    - At the end of the list. 
+    - Between first and last of the list. 
+- Let's look in to all the cases
+
+```python
+
+def atFirst(self,data):
+    newNode = Node(data)
+    if self.head in not None:
+        newNode.next = self.head
+        self.head.prev = newNode
+        self.head = newNode
+    else:
+        self.head = newNode 
+        self.tail = newNode
+    self.size +=1
+
+
+def atEnd(self,data):
+
+    newNode = Node(data)
+    if self.tail is not None:
+        self.tail.next = newNodes
+        newNode.prev = self.tail
+        self.tail = newNode
+    else:
+        self.head = newNode
+        self.tail = newNode
+    self.size +=1
+
+def atMiddle(self,data,index):
+    newNode = Node(data)
+    if self.head != None:
+        current = self.head
+        count = 0
+        while current:
+            if count == index:
+                newNode.prev = current.prev
+                newNode.next = current
+                current.prev = newNode
+                prev.next = new_node
+                self.size =+1
+            prev = current
+            current = current.next 
+
+```
+
+
+
 ### Querying a List 
+
+```python 
+
+def iter(self):
+    current = self.head 
+    while current:
+        val = current.data
+        current = current.next
+        yield val
+
+
+def contains(self,data):
+    for word in words.iter():
+        if word == data:
+            print('present')
+            return
+        print('absent')
+        return 
+
+
+```
+
+
 ### Deleting Items
+
+```python 
+
+def delAtFirst(self):
+    if self.head is not None:
+        if self.head.next is not None:
+            self.head.next.prev = None 
+        self.head = self.head.next 
+    else:
+        print('No elements to delete')
+
+
+```
+- Deleting specific data element from a doubly link list
+
+```python
+
+
+
+```
 
 
 ## Circular Linked List 
